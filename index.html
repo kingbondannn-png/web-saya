@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Web Saya</title>
+    <style>
+        /* CSS: Mengatur Tampilan */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #28a745;
+            min-height: 24px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Halo Dunia!</h1>
+        <p>Selamat datang di web pertama Anda.</p>
+        
+        <!-- Bagian Interaktif -->
+        <input type="text" id="userInput" placeholder="Ketik nama Anda di sini...">
+        <br>
+        <button onclick="sapaUser()">Sapa Saya</button>
+        
+        <div id="output"></div>
+
+        <div class="footer">Dibuat dengan HTML &amp; CSS via HP</div>
+    </div>
+
+    <script>
+        // JavaScript: Logika Aplikasi
+        function sapaUser() {
+            const input = document.getElementById('userInput').value;
+            const outputDiv = document.getElementById('output');
+            
+            if(input.trim() === "") {
+                outputDiv.style.color = "#dc3545";
+                outputDiv.innerText = "Silakan ketik nama dulu ya!";
+            } else {
+                outputDiv.style.color = "#28a745";
+                outputDiv.innerText = "Halo, " + input + "! Senang bertemu denganmu.";
+            }
+        }
+    </script>
+
+</body>
+</html>
